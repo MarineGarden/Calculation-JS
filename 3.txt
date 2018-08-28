@@ -1,0 +1,23 @@
+function add( a , b ) {
+
+	function getLastSection( digits ) {
+      
+ 		return digits.slice( digits.length - sectionLenth );
+      
+	}  
+
+	const sectionLenth = 9;
+  
+	var carry = false;
+	var answer = "0";
+  
+	do {
+  
+  		var sum = Number( getLastSection( a ) ) + Number( getLastSection( b ) );
+		return sum;
+  
+	} while( a.length>sectionLenth && b.length>sectionLenth )
+  
+	return answer;
+
+}
