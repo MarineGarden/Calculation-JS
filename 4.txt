@@ -1,0 +1,45 @@
+function add( a , b ) {
+
+	const sectionLength = 3;
+
+	function getSectionStartIndex() {
+  
+  		return (-1)*sectionLength;
+  
+	}
+
+	function getLastSection( digits ) {
+      
+ 		return digits.slice( getSectionStartIndex() );
+      
+	}
+  
+	function cutOffLastSection( digits ) {
+    
+    		digits = digits.slice( 0 , getSectionStartIndex() );
+    		return digits;
+  
+	}
+  
+	function formatSection( digits ) {
+  
+		return "0".repeat( sectionLength - digits.length ) + digits;
+  
+	}
+  
+	var carry = false;
+	var answer = "";
+  
+	do {
+  
+  		var sum = Number( getLastSection( a ) ) + Number( getLastSection( b ) ) + ( carry ? 1 : 0 );
+		carry = sum.toString().length > sectionLength;
+		a = cutOffLastSection( a );
+		b = cutOffLastSection( b );
+		answer = ( carry ? getLastSection( sum.toString() ) : formatSection( sum.toString() ) ) + answer ;
+  
+	} while( a.length>0 || b.length>0 )
+  
+	return carry ? "1" + answer : answer.match( /[1-9]\d*$|0$/ );
+
+}
