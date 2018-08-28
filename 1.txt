@@ -1,0 +1,13 @@
+function add(a,b) {
+
+	const sectionLenth = 9;
+  
+	do {
+  
+  		// some calculations...
+    
+    
+  
+	}
+
+}
