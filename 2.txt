@@ -1,0 +1,17 @@
+function add( a , b ) {
+
+	const sectionLenth = 9;
+  
+	var answer = "0";
+  
+	do {
+  
+  		// some calculations...
+    
+    
+  
+	} while( a.length>sectionLenth && b.length>sectionLenth )
+  
+	return answer;
+
+}
